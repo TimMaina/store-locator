@@ -1,2 +1,2 @@
 # google-map-project
-store locator(google maps API challenge)
+Store locator(google maps API challenge)

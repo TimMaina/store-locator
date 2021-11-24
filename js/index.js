@@ -3,6 +3,7 @@ window.onload = function () {};
 var map;
 var markers = [];
 var infoWindow;
+require("dotenv").config();
 
 function initMap() {
   var LosAngeles = { lat: 34.06338, lng: -118.35808 };
@@ -51,6 +52,10 @@ function setOnClickListener() {
   });
 }
 
+app.get((src = "/api/stores"), async (req, res) => {
+  const apiKey = process.env.API_KEY;
+});
+
 function displayStores(stores) {
   var storesHtml = "";
   for (var [index, store] of stores.entries()) {
@@ -71,13 +76,11 @@ function displayStores(stores) {
                     <div class="store-number">
                     ${index + 1}
 
-                        
+
                     </div>
                 </div>
                 </div>
             </div>
-
-      
       `;
     document.querySelector(".stores-list").innerHTML = storesHtml;
   }
